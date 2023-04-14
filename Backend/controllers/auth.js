@@ -28,12 +28,12 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const userdoc = await User.findById({ email: email });
+    const { loginEmail, loginPassword } = req.body;
+    const userdoc = await User.findById({ email: loginEmail });
     if (!userdoc) {
       res.send("invalid user");
     } else {
-      bcrypt.compare(password, userdoc[0].password, async (req,res,ismatch) => {
+      bcrypt.compare(loginPassword, userdoc[0].loginPassword, async (req,res,ismatch) => {
         if (ismatch) {
           console.log("successfull login");
           const token = await userdoc[0].generateAuthToken();

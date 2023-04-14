@@ -2,6 +2,7 @@ import express from 'express'
 const app = express();
 import mongoose from 'mongoose';
 import { register } from './controllers/auth.js';
+import { login } from './controllers/auth.js';
 import cors from 'cors';
 app.use(express.json());
 
@@ -34,3 +35,4 @@ app.get("/", async (req, res) => {
   res.send("welcome to the home page");
 });
 app.post("/register",register);
+app.post("/login",login);
