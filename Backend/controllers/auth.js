@@ -1,11 +1,15 @@
 import User from "../Schemas/userSchema.js";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
+import json from 'express';
+import cookieParser from "cookie-parser";
+import express from 'express';
+const app = express();
+app.use(cookieParser());
 export const register = async (req, res) => {
   try {
     const { userName, email, mobileNo, password, confirmPassword } = req.body;
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
-
 
     const newUser = new User({
       userName: userName,
@@ -16,22 +20,36 @@ export const register = async (req, res) => {
     });
     const savedUser = await newUser.save();
     console.log(savedUser);
-    console.log("user saved successfully")
+    console.log("user saved successfully");
   } catch (e) {
     console.log(e);
   }
 };
 
-export const login = async(req,res)=>{
-  try{
-      const {userName, password} = req.body;
-      const userdoc = User.findById({userName:userName});
+export const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const userdoc = await User.findById({ email: email });
+    if (!userdoc) {
+      res.send("invalid user");
+    } else {
+      bcrypt.compare(password, userdoc[0].password, async (req,res,ismatch) => {
+        if (ismatch) {
+          console.log("successfull login");
+          const token = await userdoc[0].generateAuthToken();
+          console.log("the token is " + token);
 
+          res.cookie("jwt", token, {
+            expires: new Date(Date.now() + 30000),
+            httpOnly: true,
+          });
 
-
+        } else {
+          console.log("invalid password");
+        }
+      });
+    }
+  } catch (e) {
+    console.log(e);
   }
-  catch(e){
-               console.log(e);          
-  }
-}
-
+};
