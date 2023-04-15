@@ -1,12 +1,14 @@
 import User from "../Schemas/userSchema.js";
 import bcrypt from "bcrypt";
-import json from 'express';
 import cookieParser from "cookie-parser";
 import express from 'express';
-import '../Schemas/userSchema.js'
+import jwt from 'jsonwebtoken'
 
 const app = express();
 app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
 export const register = async (req, res) => {
   try {
     const { userName, email, mobileNo, password, confirmPassword } = req.body;
@@ -31,22 +33,24 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { loginEmail, loginPassword } = req.body;
-    console.log(loginEmail)
+    
     const userdoc = await User.find({ email: loginEmail });
-    console.log(userdoc)
-    const result = bcrypt.compare(userdoc[0].password,loginPassword)
+    const result =await  bcrypt.compare(loginPassword,userdoc[0].password)
     if(result){
+     console.log("successful login")
      const token= await userdoc[0].generateAuthToken()
      console.log("the token is "+ token);
-      res.cookie("jwt", token, {
-          expires: new Date(Date.now()+30000),
-          httpOnly:true
-      });
+     res.cookie("jwt",token,{ expires: new Date(Date.now() + 900000), httpOnly: true })
+    
+     
+     
+     
     }
     else{
-        res.send("invalid login info")
+        res.send("Invalid login info")
     }
   } catch (e) {
     console.log(e);
+    res.status(500).send("Error occurred during login");
   }
 };

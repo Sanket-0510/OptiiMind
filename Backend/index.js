@@ -4,7 +4,10 @@ import mongoose from 'mongoose';
 import { register } from './controllers/auth.js';
 import { login } from './controllers/auth.js';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
+app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(cookieParser())
 import dotenv from 'dotenv-flow';
 app.use(cors());
 mongoose.set("strictQuery", false);
@@ -36,3 +39,5 @@ app.get("/", async (req, res) => {
 });
 app.post("/register",register);
 app.post("/login",login);
+
+
