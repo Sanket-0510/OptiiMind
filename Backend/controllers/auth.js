@@ -33,21 +33,23 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { loginEmail, loginPassword } = req.body;
-    
-    const userdoc = await User.find({ email: loginEmail });
-    const result =await  bcrypt.compare(loginPassword,userdoc[0].password)
-    if(result){
-     console.log("successful login")
-     const token= await userdoc[0].generateAuthToken()
-     console.log("the token is "+ token);
-     res.cookie("jwt",token,{ expires: new Date(Date.now() + 900000), httpOnly: true })
-    
-     
-     
-     
-    }
-    else{
-        res.send("Invalid login info")
+
+    console.log(req.body);
+
+    const userdoc = await User.findOne({ email: loginEmail });
+    console.log(userdoc);
+    const result = await bcrypt.compare(loginPassword, userdoc.password);
+    if (result) {
+      console.log("successful login");
+      const token = await userdoc.generateAuthToken();
+      console.log("the token is " + token);
+      res.cookie("jwt", token, {
+        expires: new Date(Date.now() + 900000),
+        httpOnly: true,
+      });
+      res.status(200).json({ message: "login successful", jwtToken: token });
+    } else {
+      res.send("Invalid login info");
     }
   } catch (e) {
     console.log(e);
