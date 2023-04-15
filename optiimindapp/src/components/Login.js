@@ -5,11 +5,16 @@ import axios from "axios";
 const Login = () => {
   const [loginEmail, setloginEmail] = useState("");
   const [loginPassword, setloginPassword] = useState("");
-  const handleSubmit = async()=>{
-    await axios.post("http://localhost:8000/login",{loginEmail,loginPassword});
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post(
+      "http://localhost:8000/login",
+      { loginEmail, loginPassword },
+      { withCredentials: true }
+    );
     setloginEmail("");
     setloginPassword("");
-  }
+  };
 
   return (
     <div>
@@ -22,7 +27,7 @@ const Login = () => {
             setloginEmail(e.target.value);
           }}
         />
-         <input
+        <input
           type="text"
           placeholder="enter password"
           value={loginPassword}
