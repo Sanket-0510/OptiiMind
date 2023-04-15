@@ -9,7 +9,10 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cookieParser())
 import dotenv from 'dotenv-flow';
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: "http://localhost:3000"
+}));
 mongoose.set("strictQuery", false);
 import { DATABASE_KEY, SECRET_KEY } from './config.js';
 

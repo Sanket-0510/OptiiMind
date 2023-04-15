@@ -9,7 +9,8 @@ const Register = () => {
   const [mobileNo, setmobileNo] = useState("");
   const [password, setpassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     try {
       await axios.post("http://localhost:8000/register", {
         userName,
