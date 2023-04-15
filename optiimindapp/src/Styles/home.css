@@ -1,7 +1,7 @@
 /* Example CSS for Home Component */
 
 .home {
-  background-image: url("D:\Desktop\OptiIMind\home-background.jpg"); /* Replace 'your-image-url.jpg' with your actual image URL */
+  background-image: url("https://github.com/Sanket-0510/OptiiMind/blob/main/home-background.jpg"); /* Replace 'your-image-url.jpg' with your actual image URL */
   background-size: cover;
   background-position: center;
   height: 100vh; /* Set the height as desired */
