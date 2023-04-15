@@ -12,7 +12,14 @@ const Home = () => {
    <NavBar></NavBar>
    <div className="home">
       <h1 className="title">Advantages of Using Our Website</h1>
-      <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam faucibus est, eu dapibus tortor. Sed vestibulum mi id finibus vestibulum. Vestibulum a massa metus. Vivamus ullamcorper risus a magna dapibus, at tempus justo tristique.</p>
+      <p className="description">Welcome to our self-help platform,
+      where you can discover effective solutions for an array of 
+      everyday challenges, including anxiety disorders and various
+      mental health issues. Our resources encompass a diverse range
+      of mediums, including informative blogs, insightful podcasts, 
+      and meditative techniques, ensuring you find the optimal approach
+      for your unique needs. We encourage you to explore our platform 
+      and utilize our resources to improve your mental health and wellbeing.</p>
       {/* Additional content for the Home component */}
       {/* ... */}
     </div>
