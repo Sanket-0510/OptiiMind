@@ -1,0 +1,101 @@
+/* Landing page container */
+.landing-page-container {
+                         padding: 20px;
+                       }
+                       
+                       /* Landing page heading */
+                       .landing-page-heading {
+                         font-size: 40px;
+                         font-weight: bold;
+                         margin-bottom: 20px;
+                       }
+                       
+                       /* Landing page paragraph */
+                       .landing-page-paragraph {
+                         font-size: 18px;
+                         margin-bottom: 40px;
+                       }
+                       
+                       /* Landing page subheading */
+                       .landing-page-subheading {
+                         font-size: 24px;
+                         font-weight: bold;
+                         margin-bottom: 20px;
+                       }
+                       
+                       /* Landing page benefits */
+                       .landing-page-benefits {
+                         display: flex;
+                         flex-wrap: wrap;
+                         gap: 20px;
+                         margin-bottom: 40px;
+                       }
+                       
+                       /* Landing page benefit item */
+                       .landing-page-benefit-item {
+                         flex-basis: calc(33.3333% - 20px);
+                       }
+                       
+                       /* Landing page benefit heading */
+                       .landing-page-benefit-heading {
+                         font-size: 20px;
+                         font-weight: bold;
+                         margin-bottom: 10px;
+                       }
+                       
+                       /* Landing page benefit paragraph */
+                       .landing-page-benefit-paragraph {
+                         font-size: 16px;
+                       }
+                       
+                       /* Landing page cards container */
+                       .landing-page-cards-container {
+                         display: flex;
+                         flex-wrap: wrap;
+                         gap: 20px;
+                       }
+                       
+                       /* Landing page card */
+                       .landing-page-card {
+                         flex-basis: calc(33.3333% - 20px);
+                         padding: 20px;
+                         background-color: #f9f9f9;
+                         border-radius: 4px;
+                         opacity: 0;
+                         transition: opacity 0.5s ease-in-out;
+                       }
+                       
+                       /* Landing page card heading */
+                       .landing-page-card-heading {
+                         font-size: 20px;
+                         font-weight: bold;
+                         margin-bottom: 10px;
+                       }
+                       
+                       /* Landing page card paragraph */
+                       .landing-page-card-paragraph {
+                         font-size: 16px;
+                       }
+                       
+                       /* Landing page card hover effect */
+                       .landing-page-card:hover {
+                         transform: scale(1.05);
+                         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                       }
+                       
+                       /* Animation for cards to fade in with delay */
+                       @keyframes fade-in {
+                         0% {
+                           opacity: 0;
+                         }
+                         100% {
+                           opacity: 1;
+                         }
+                       }
+                       
+                       .landing-page-card-animation {
+                         animation: fade-in 0.5s ease-in-out;
+                         animation-fill-mode: both;
+                         animation-delay: calc(var(--card-index) * 100ms);
+                       }
+                       

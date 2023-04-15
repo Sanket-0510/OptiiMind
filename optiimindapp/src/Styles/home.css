@@ -1,0 +1,26 @@
+/* Example CSS for Home Component */
+
+.home {
+  background-image: url("https://github.com/Sanket-0510/OptiiMind/blob/main/home-background.jpg"); /* Replace 'your-image-url.jpg' with your actual image URL */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Set the height as desired */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content {
+  /* Styles for the content within the Home component */
+  text-align: center;
+  color: #fff; /* Set the text color as desired */
+}
+
+.home-title {
+  font-size: 2rem; /* Set the title font size as desired */
+  font-weight: bold;
+}
+
+.home-description {
+  margin-top: 1rem; /* Set the margin-top as desired */
+}
