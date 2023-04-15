@@ -6,7 +6,9 @@ const Login = () => {
   const [loginEmail, setloginEmail] = useState("");
   const [loginPassword, setloginPassword] = useState("");
   const handleSubmit = async()=>{
-    await axios.post("http://localhost8000/login",{loginEmail,loginPassword});
+    await axios.post("http://localhost:8000/login",{loginEmail,loginPassword});
+    setloginEmail("");
+    setloginPassword("");
   }
 
   return (
@@ -25,7 +27,7 @@ const Login = () => {
           placeholder="enter password"
           value={loginPassword}
           onChange={(e) => {
-            setloginEmail(e.target.value);
+            setloginPassword(e.target.value);
           }}
         />
         <button onSubmit={handleSubmit}>Login</button>

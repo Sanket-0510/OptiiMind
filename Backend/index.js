@@ -5,7 +5,7 @@ import { register } from './controllers/auth.js';
 import { login } from './controllers/auth.js';
 import cors from 'cors';
 app.use(express.json());
-
+import dotenv from 'dotenv-flow';
 app.use(cors());
 mongoose.set("strictQuery", false);
 mongoose
