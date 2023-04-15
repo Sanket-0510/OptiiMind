@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 import jwt from 'jsonwebtoken';
 import express from 'express'
 import bcrypt from 'bcrypt'
+import dotenv from 'dotenv-flow'
+import { SECRET_KEY } from "../config.js";
 const userSchema = new mongoose.Schema({
   userName: {
     type: String,
@@ -36,7 +38,7 @@ userSchema.methods.generateAuthToken = async function () {
   try {
     const token = jwt.sign(
       { _id: this._id.toString() },
-      "mynameissanketteliistudyiniiitna"
+      SECRET_KEY
     );
     this.tokens = this.tokens.concat({ token: token });
     await this.save();

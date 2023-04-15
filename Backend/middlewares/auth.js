@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../Schemas/userSchema";
+import { SECRET_KEY } from "../config";
 export const auth = async (req, res, next) => {
   try {
     const token = req.cookies.jwt;

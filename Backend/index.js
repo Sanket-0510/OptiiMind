@@ -11,9 +11,11 @@ app.use(cookieParser())
 import dotenv from 'dotenv-flow';
 app.use(cors());
 mongoose.set("strictQuery", false);
+import { DATABASE_KEY, SECRET_KEY } from './config.js';
+
 mongoose
   .connect(
-    "mongodb+srv://telisanket2002:dpYFDWYVHRksyGfK@cluster0.wjezzne.mongodb.net/optiiMind",
+  DATABASE_KEY,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
