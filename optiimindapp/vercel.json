@@ -1,0 +1,12 @@
+{
+                         "rewrites": [
+                           {
+                             "source": "/Images/(.*)",  
+                             "destination": "/Images/$1"  
+                           }
+                         ],
+                         "static": {
+                           "directory": "Images"  
+                         }
+                       }
+                       
