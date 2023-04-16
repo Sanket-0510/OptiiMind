@@ -19,7 +19,7 @@ const Home = () => {
     
         <div className="container">
             <nav>
-                <img src="logo"/>
+                <img src="https://globalbrains.com/strapi/uploads/invested-in-optimind/og-optimind.png"/>
                 <ul id="sidemenu">
                     <li><a href="#header"/>Home</li>
                     <li><a href="#about"/>About</li>
