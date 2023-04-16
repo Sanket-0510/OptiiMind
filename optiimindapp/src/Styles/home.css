@@ -4,6 +4,18 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
+.navBarImg{
+    border-radius: 20px;
+    width: 100px;
+    margin-top: 10px;
+    transition: transform 0.5s ease-in-out;
+
+    
+}
+.navBarImg:hover{
+  transform: scale(1.15);
+
+}
 html {
   scroll-behavior: smooth;
 }
@@ -302,3 +314,24 @@ nav .fas {
     font-size: 14px;
   }
 }
+/* CSS code */
+.Astro {
+                         opacity: 0; /* set the initial opacity of the image to 0 */
+                         transition: opacity 0.3s ease-in-out; /* set the transition effect duration and timing function for the opacity property */
+                         animation-name: fade-in;
+                         animation-duration: 0.1s;
+                         animation-timing-function: ease-in-out;
+                         animation-fill-mode: forwards;
+                         animation-delay: 2s; /* set the delay before the animation starts */
+                         margin-left: 50px;
+                       }
+                       
+                       @keyframes fade-in {
+                         from {
+                           opacity: 0;
+                         }
+                         to {
+                           opacity: 1;
+                         }
+                       }
+                       

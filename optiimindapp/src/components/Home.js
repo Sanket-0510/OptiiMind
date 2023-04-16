@@ -18,8 +18,8 @@ const Home = () => {
     <div id="header">
     
         <div className="container">
-            <nav>
-                <img src="https://globalbrains.com/strapi/uploads/invested-in-optimind/og-optimind.png"/>
+            <nav className="navBar">
+                <img className="navBarImg" src="https://globalbrains.com/strapi/uploads/invested-in-optimind/og-optimind.png"  />
                 <ul id="sidemenu">
                     <li><a href="#header"/>Home</li>
                     <li><a href="#about"/>About</li>
@@ -39,7 +39,7 @@ const Home = () => {
         <div clasNames="container">
             <div className="row">
                 <div className="about-col-1">
-                    <img src="astro.png"/>
+                    <img className="Astro" src="https://img.freepik.com/free-vector/woman-practicing-yoga_18591-77163.jpg?size=626&ext=jpg"/>
                 </div>
                 <div className="about-col-2">
                     <h1 className="sub-titlte">About Us</h1>
