@@ -1,0 +1,32 @@
+.LoginForm{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;    
+ align-items: center;      
+ width: 100%;
+ height: 100vh;
+ font-weight: 700;
+ background-image: url("https://i.redd.it/9wy1d9u65x751.png");
+ background-size: cover;
+ background-position: center;
+}
+.fields{
+   width: 18vw;
+}
+.form{
+display: flex;
+flex-direction: column;
+margin-bottom: 18vh;
+
+}
+#loginButton{
+border-radius: 2vh;
+width: 10vw;
+margin-left: 4vw;
+background-color: #b988a1;
+height: 5vh;
+font-size: larger;
+font-weight: 900;
+color: aliceblue;
+}
+

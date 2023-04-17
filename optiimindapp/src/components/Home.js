@@ -15,25 +15,10 @@ const Home = () => {
   return <div>
     
    <body>
-    <div id="header">
+    <NavBar></NavBar>
     
-        <div className="container">
-            <nav className="navBar">
-                <img className="navBarImg" src="https://globalbrains.com/strapi/uploads/invested-in-optimind/og-optimind.png"  />
-                <ul id="sidemenu">
-                    <li><a href="#header"/>Home</li>
-                    <li><a href="#about"/>About</li>
-                    <li><a href="#services"/>Work</li>
-                    <li><a href="#contact"/>Contacts</li>
-                    <i className="fas fa-times"></i>
-                </ul>
-                <i className="fa-solid fa-bars"></i>
-            </nav>
-            <div className="header-text">
-                <h1>Optiimind<span></span><br/>Optimize your Mind!</h1>
-            </div>
-        </div>
-    </div>
+    
+        
     
     <div id="about">
         <div clasNames="container">
@@ -165,7 +150,7 @@ const Home = () => {
     </div>
     <script src="index.js"></script>
 </body>
-   
+      
   </div>;
 };
 

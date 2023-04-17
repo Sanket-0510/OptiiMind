@@ -6,8 +6,8 @@ import "../Styles/navbar.css"; // Import the CSS file
 
 const Navigation = () => {
   return (
-    <nav className="navigation">
-      <h1 className="navigation-logo">Mental Health Care</h1>
+    <nav id="header">
+      <h1>Logo</h1>
       <ul className="navigation-links">
         <li className="navigation-link">
           <Link to="/">Home</Link>
@@ -20,6 +20,9 @@ const Navigation = () => {
         </li>
         <li className="navigation-link">
           <Link to="/contact">Contact</Link>
+        </li>
+        <li className="navigation-link">
+          <Link to="/loginPage">Login</Link>
         </li>
       </ul>
     </nav>
