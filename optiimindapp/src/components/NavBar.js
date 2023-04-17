@@ -6,7 +6,9 @@ import "../Styles/navbar.css"; // Import the CSS file
 
 const Navigation = () => {
   return (
-    <nav id="header">
+    <div>
+      <div className="image">
+    <nav className="navbar">
       <h1>Logo</h1>
       <ul className="navigation-links">
         <li className="navigation-link">
@@ -26,6 +28,9 @@ const Navigation = () => {
         </li>
       </ul>
     </nav>
+    <div className="backgroundImage"></div>
+    </div>
+    </div>
   );
 };
 
