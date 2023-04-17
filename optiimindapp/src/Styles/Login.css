@@ -30,3 +30,11 @@ font-weight: 900;
 color: aliceblue;
 }
 
+.signup-para{
+                         margin-left: 3vh;
+                         margin-top: 3vh;
+                       
+                       }
+                       .signup-para a{
+                          margin-top: 1vh;
+                       }

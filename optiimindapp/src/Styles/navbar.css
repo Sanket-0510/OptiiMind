@@ -14,11 +14,13 @@
                          left: 0; /* Place at the left of the viewport */
                          right: 0; /* Place at the right of the viewport */
                          z-index: 1; /* Set z-index to a value greater than the background image */
+                         margin-top: 2vh;
                          
                        }
 
 .image h1{
  transform: translateY(35vh);
  margin-left: 10vh;
+
  
 }

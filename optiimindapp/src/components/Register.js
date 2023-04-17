@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from 'axios';
-
+import '../Styles/register.css'
 
 const Register = () => {
   const [userName, setuserName] = useState("");
@@ -24,41 +24,46 @@ const Register = () => {
     }
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <>
+    <div className="parent-container">
+      <div className="form-container">
+        <div className="form-heading">Sign Up</div>
+      <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
-          placeholder="enter your full name"
+          placeholder="Name"
           value={userName}
           onChange={(e)=>setuserName(e.target.value)}
         />
         <input
           type="text"
-          placeholder="enter your email Id"
+          placeholder="Email"
           value={email}
           onChange={(e)=>setemail(e.target.value)}
         />
         <input
           type="text"
-          placeholder="enter your mobileNo"
+          placeholder="Contact No"
           value={mobileNo}
           onChange={(e)=>setmobileNo(e.target.value)}
         />
         <input
           type="text"
-          placeholder="enter your password"
+          placeholder="Password"
           value={password}
           onChange={(e)=>setpassword(e.target.value)}
         />
         <input
           type="text"
-          placeholder="confirmPassword"
+          placeholder="ConfirmPassword"
           value={confirmPassword}
           onChange={(e)=>setconfirmPassword(e.target.value)}
         />
         <button onClick={handleSubmit}>Submit</button>
       </form>
+      </div>
     </div>
+    </>
   );
 };
 

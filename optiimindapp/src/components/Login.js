@@ -42,6 +42,7 @@ const Login = () => {
           }}
         />
         <button onSubmit={handleSubmit} className="fields" id="loginButton">Login</button>
+        <p className="signup-para">don't have account? <a href="/signup">SignUp</a> </p>
       </form>
       </div>
     </div>
