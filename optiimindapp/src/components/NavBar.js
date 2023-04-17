@@ -9,7 +9,7 @@ const Navigation = () => {
     <div>
       <div className="image">
     <nav className="navbar">
-      <h1>Logo</h1>
+      <h2>Logo</h2>
       <ul className="navigation-links">
         <li className="navigation-link">
           <Link to="/">Home</Link>
@@ -28,7 +28,11 @@ const Navigation = () => {
         </li>
       </ul>
     </nav>
-    <div className="backgroundImage"></div>
+
+    <div className="backgroundImage">
+      <h1>OPtiiMind</h1> <br />
+      <h1>OptiMise Your Mind!</h1>
+    </div>
     </div>
     </div>
   );
