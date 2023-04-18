@@ -3,6 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
 import "../Styles/navbar.css"; // Import the CSS file
+import { Profile } from "./Profile";
 
 const Navigation = () => {
   return (
@@ -25,6 +26,9 @@ const Navigation = () => {
         </li>
         <li className="navigation-link">
           <Link to="/loginPage">Login</Link>
+        </li>
+        <li>
+          <Profile></Profile>
         </li>
       </ul>
     </nav>

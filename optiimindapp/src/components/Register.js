@@ -10,6 +10,11 @@ const Register = () => {
   const [password, setpassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const handleSubmit = async (e) => {
+    setuserName("")
+    setemail("")
+    setmobileNo("")
+    setpassword("")
+    setconfirmPassword("")
     e.preventDefault()
     try {
       await axios.post("http://localhost:8000/register", {
