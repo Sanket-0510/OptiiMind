@@ -17,7 +17,7 @@ const Home = () => {
   return <div>
     
    <body>
-    <ParticlesBackgorund></ParticlesBackgorund>
+    
     <NavBar></NavBar>
     
     
