@@ -6,6 +6,8 @@ import LandingPage2 from "./LandingPage2";
 import Slider from "./Slider";
 import AdvantageSection from "./AdvantageSection";
 import '../Styles/home.css'
+import ParticlesBackgorund from "./ParticlesBackgorund";
+
 
 
 const Home = () => {
@@ -15,6 +17,7 @@ const Home = () => {
   return <div>
     
    <body>
+    <ParticlesBackgorund></ParticlesBackgorund>
     <NavBar></NavBar>
     
     
