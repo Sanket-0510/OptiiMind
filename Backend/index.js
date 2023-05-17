@@ -5,9 +5,11 @@ import { register } from './controllers/auth.js';
 import { login } from './controllers/auth.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import profile from './controllers/profile.js'
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cookieParser())
+import {auth} from './middlewares/auth.js'
 import dotenv from 'dotenv-flow';
 app.use(cors({
   credentials: true,
@@ -45,5 +47,6 @@ app.get("/", async (req, res) => {
 app.post("/register",register);
 app.post("/login",login);
 
+app.get("/profile", auth, profile);
 
 

@@ -17,3 +17,6 @@ Some of the features of the mental health web app include:
 Contributing
 
 We welcome contributions from anyone who is passionate about mental health and wants to help make our web app better. If you have ideas for new features, improvements to existing features, or have found any issues or bugs, please feel free to submit a pull request or create an issue.
+
+
+Checkout Contribution.md to start contributing to the project you can come up with new features and ideas for the app, like the integration of AI to the web App.

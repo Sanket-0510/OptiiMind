@@ -48,6 +48,7 @@ export const login = async (req, res) => {
         httpOnly: true,
       });
       res.status(200).json({ message: "login successful", jwtToken: token });
+      
     } else {
       res.send("Invalid login info");
     }

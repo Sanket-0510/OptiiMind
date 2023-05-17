@@ -1,0 +1,10 @@
+{
+                         "rewrites": [
+                           {
+                             "source": "/Images/(.*)",  
+                             "destination": "/Images/$1"  
+                           }
+                         ]
+                        
+                       }
+                       
