@@ -18,8 +18,10 @@ app.use(cookieParser());
 
 app.use(cors({
   credentials: true,
-  origin: 'https://optiimind-5348qhelg-sanket-0510.vercel.app'
+  origin: 'https://optiimind-5348qhelg-sanket-0510.vercel.app/'
 }));
+app.options('*', cors());
+
 
 
 mongoose.set('strictQuery', false);
@@ -43,6 +45,8 @@ app.get('https://optiimind.onrender.com/profile', async (req, res) => {
 app.get('https://optiimind.onrender.com/', async (req, res) => {
   res.send('Welcome to the home page');
 });
+
+
 
 app.post('https://optiimind.onrender.com/register', register);
 app.post('https://optiimind.onrender.com/login', login);
