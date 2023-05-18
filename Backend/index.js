@@ -19,8 +19,9 @@ app.use(cookieParser());
 
 app.use(cors({
   credentials: true,
-  origin: "https://optiimind-5348qhelg-sanket-0510.vercel.app/"
+  origin: ["https://optiimind-5348qhelg-sanket-0510.vercel.app", "http://localhost:3000"]
 }));
+
 
 mongoose.set('strictQuery', false);
 
