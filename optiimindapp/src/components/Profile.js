@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 var data;
 export const Profile = () => {
   const profile = async(req,res)=>{
-     data = await axios.get("https://optiimind.onrender.com/");
+     data = await axios.get("https://optiimind.onrender.com/profile");
      
 
   }

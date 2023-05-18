@@ -9,7 +9,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post(
-      "https://optiimind.onrender.com",
+      "https://optiimind.onrender.com/login",
       { loginEmail, loginPassword },
       { withCredentials: true }
     );

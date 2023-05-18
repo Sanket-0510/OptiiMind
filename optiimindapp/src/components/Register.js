@@ -17,7 +17,7 @@ const Register = () => {
     setconfirmPassword("")
     e.preventDefault()
     try {
-      await axios.post("https://optiimind.onrender.com/", {
+      await axios.post("https://optiimind.onrender.com/register", {
         userName,
         email,
         mobileNo,
