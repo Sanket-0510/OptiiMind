@@ -1,52 +1,53 @@
-import express from 'express'
-const app = express();
+import express from 'express';
 import mongoose from 'mongoose';
-import { register } from './controllers/auth.js';
-import { login } from './controllers/auth.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import profile from './controllers/profile.js'
-app.use(express.urlencoded({extended:false}));
-app.use(express.json());
-app.use(cookieParser())
-import {auth} from './middlewares/auth.js'
+import { auth } from './middlewares/auth.js';
+import { register, login } from './controllers/auth.js';
+import profile from './controllers/profile.js';
 import dotenv from 'dotenv-flow';
+
+const app = express();
+const PORT = process.env.PORT || 8000;
+
+
+dotenv.config();
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cookieParser());
+
 app.use(cors({
   credentials: true,
-  origin: "http://localhost:3000"
+  origin: "https://optiimind.vercel.app/"
 }));
-mongoose.set("strictQuery", false);
-import { DATABASE_KEY, SECRET_KEY } from './config.js';
+
+mongoose.set('strictQuery', false);
 
 mongoose
-  .connect(
-  DATABASE_KEY,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
-  .then(
-    () => {
-      console.log("database connected");
-    },
-    (e) => {
-      console.log(e);
-    }
-  );
-  
-app.listen(8000, (req, res) => {
-  console.log("connected successfully");
-});
-app.get("/profile", async (req, res) => {
-  res.send("welcome");
-});
-app.get("/", async (req, res) => {
-  res.send("welcome to the home page");
-});
-app.post("/register",register);
-app.post("/login",login);
+  .connect(process.env.DATABASE_KEY, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log('Database connected');
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
-app.get("/profile", auth, profile);
+app.get('/profile', async (req, res) => {
+  res.send('Welcome');
+});
 
+app.get('/', async (req, res) => {
+  res.send('Welcome to the home page');
+});
 
+app.post('/register', register);
+app.post('/login', login);
+app.get('/profile', auth, profile);
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

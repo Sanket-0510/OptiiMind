@@ -17,7 +17,7 @@ const Register = () => {
     setconfirmPassword("")
     e.preventDefault()
     try {
-      await axios.post("http://localhost:8000/register", {
+      await axios.post("", {
         userName,
         email,
         mobileNo,

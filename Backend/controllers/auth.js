@@ -2,7 +2,7 @@ import User from "../Schemas/userSchema.js";
 import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
 import express from "express";
-import jwt from "jsonwebtoken";
+
 
 const app = express();
 app.use(cookieParser());

@@ -4,7 +4,7 @@ import React from "react";
 const CookieTest = () => {
 
                         const  handleSubmit = async()=>{
-                           await axios.post("http://localhost:8000/cookiecheck")
+                           await axios.post("https://optiimind.onrender.com/cookiecheck")
                          }
   return <div>
      <button onClick={handleSubmit}>submit</button>
