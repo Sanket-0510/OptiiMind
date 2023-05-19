@@ -17,7 +17,7 @@ const Register = () => {
     setconfirmPassword("")
     e.preventDefault()
     try {
-      await axios.post("https://optiimind.onrender.com/register", {
+      await axios.post(process.env.REACT_APP_API_URL + "/register", {
         userName,
         email,
         mobileNo,
