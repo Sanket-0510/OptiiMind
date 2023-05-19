@@ -42,19 +42,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "MindSync",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "SoulSync",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "ZenFlow",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Breathe",
     icon: creator,
   },
 ];
@@ -198,7 +198,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "MindSync",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
@@ -216,10 +216,9 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "SoulSync",
     description:
       "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
     tags: [
@@ -237,10 +236,9 @@ const projects = [
       },
     ],
     image: jobit,
-    source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Zenflow",
     description:
       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
@@ -258,7 +256,6 @@ const projects = [
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
   },
 ];
 

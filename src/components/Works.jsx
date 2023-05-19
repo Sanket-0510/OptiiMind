@@ -71,8 +71,7 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <h2 className={`${styles.sectionHeadText}`}>Activities</h2>
       </motion.div>
 
       <div className='w-full flex'>
@@ -80,11 +79,15 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          Welcome to OptiiMind's Activities Section, where you'll find three 
+          captivating cards—SoulSync, MindSync, and Breathe. Explore your inner 
+          world with SoulSync as you delve into your emotions and forge a deeper 
+          connection with yourself. Engage your intellect with MindSync's stimulating
+          puzzles and unleash your creativity. Find serenity and rejuvenation with 
+          Breathe as you immerse yourself in mindful practices. Unlock your potential, 
+          enrich your mind, and nurture your soul in this transformative journey of
+          self-discovery. Step into OptiiMind's Activities Section and embark on an 
+          extraordinary adventure of infinite possibilities.
         </motion.p>
       </div>
 
