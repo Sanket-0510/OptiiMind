@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+import cards from "../assets/cards.png";
 
 const Hero = () => {
   return (
@@ -25,7 +24,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      <div className="flex object-bottom justify-center h-screen">
+      <img src={cards} alt="Image" className="mx-auto mb-10 h-40vh" />
+    </div>
+
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
