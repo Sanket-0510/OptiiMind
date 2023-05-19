@@ -23,9 +23,9 @@ export const register = async (req, res) => {
       confirmPassword: passwordHash,
     });
     const savedUser = await newUser.save();
-    console.log(savedUser);
+   
     console.log("user saved successfully");
-    res.send("saved");
+    res.send(savedUser);
   } catch (e) {
     console.log(e);
   }
