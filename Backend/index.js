@@ -48,7 +48,9 @@ app.get('/', async (req, res) => {
 
 
 
-app.post('/register', register);
+app.post('/register',
+  register
+);
 app.post('/login', login);
 app.get('/profile', auth, profile);
 

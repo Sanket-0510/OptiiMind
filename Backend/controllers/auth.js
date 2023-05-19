@@ -25,6 +25,7 @@ export const register = async (req, res) => {
     const savedUser = await newUser.save();
     console.log(savedUser);
     console.log("user saved successfully");
+    res.send("saved");
   } catch (e) {
     console.log(e);
   }
