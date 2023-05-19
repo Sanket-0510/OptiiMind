@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
 
       <div className="flex object-bottom justify-center h-screen">
-      <img src={cards} alt="Image" className="mx-auto mb-10 h-40vh" />
+      <img src={cards} alt="Image" className="mx-auto mb-10 h-" />
     </div>
 
 
