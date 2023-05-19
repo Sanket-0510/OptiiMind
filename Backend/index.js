@@ -20,7 +20,7 @@ app.use(cors({
   credentials: true,
   origin: 'https://optiimind-5348qhelg-sanket-0510.vercel.app/'
 }));
-app.options('*', cors());
+
 
 
 
@@ -38,19 +38,19 @@ mongoose
     console.log(e);
   });
 
-app.get('https://optiimind.onrender.com/profile', async (req, res) => {
+app.get('/profile', async (req, res) => {
   res.send('Welcome');
 });
 
-app.get('https://optiimind.onrender.com/', async (req, res) => {
+app.get('/', async (req, res) => {
   res.send('Welcome to the home page');
 });
 
 
 
-app.post('https://optiimind.onrender.com/register', register);
-app.post('https://optiimind.onrender.com/login', login);
-app.get('https://optiimind.onrender.com/profile', auth, profile);
+app.post('/register', register);
+app.post('/login', login);
+app.get('/profile', auth, profile);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
