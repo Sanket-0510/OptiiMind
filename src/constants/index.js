@@ -172,27 +172,27 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "Unlock the gateway to a vibrant community of wellness seekers on OptiiMind's Discord server, where minds harmonize and grow together.",
+    name: "Mohit Kumar",
+    designation: " Symphony Director",
+    company: "Discord",
+    image: "https://e1.pxfuel.com/desktop-wallpaper/153/568/desktop-wallpaper-discord-neon-icon-discord-logo-thumbnail.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "Dive into the captivating world of OptiiMind's Reddit realm, where ideas flourish, discussions ignite, and the collective wisdom of wellness enthusiasts thrives.",
+    name: "Sahil Mandi",
+    designation: "Realm Guardian",
+    company: "Reddit",
+    image: "https://www.redditinc.com/assets/images/site/reddit-logo.png",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+      "Embark on a captivating journey through the realm of OptiiMind's Twitterverse, where inspiration takes flight, conversations spark, and wisdom is condensed into 280 characters.",
+    name: "Sanket Teli",
+    designation: "Tweet Maestro",
+    company: "ooptiimind",
+    image: "https://static.vecteezy.com/system/resources/previews/002/534/045/original/social-media-twitter-logo-blue-isolated-free-vector.jpg",
   },
 ];
 
