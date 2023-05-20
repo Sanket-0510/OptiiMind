@@ -55,7 +55,7 @@ const Works = () => {
       <div className='w-full flex'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 text-secondary text-[20px] max-w-6xl leading-[30px]'
         >
           Welcome to OptiiMind's Activities Section, where you'll find three 
           captivating cards—SoulSync, MindSync, and Breathe. Explore your inner 

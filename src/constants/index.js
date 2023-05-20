@@ -3,26 +3,9 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
-  threejs,
 } from "../assets";
 
 export const navLinks = [
@@ -90,19 +73,19 @@ const projects = [
   {
     name: "MindSync",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Unburden your thoughts and declutter your mind with MindSpace.",
     image: carrent,
   },
   {
     name: "SoulSync",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Get mental health assessments based on your interactions for professional guidance.",
     image: jobit,
   },
   {
     name: "Zenflow",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Cultivate mindfulness & alleviate stress with Zen activities like meditation & breathing.",
     image: tripguide,
   },
 ];

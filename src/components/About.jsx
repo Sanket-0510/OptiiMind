@@ -6,33 +6,6 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
-
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
 
 const About = () => {
   return (
@@ -43,13 +16,15 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-secondary text-[20px] max-w-6xl leading-[30px]'
       >
-       Dicover OptiiMind, your pace for mental serenity.
-       Engage your mind without our unique, healing activities
-       deigned to help overcome depresion. Join our supportive
-       community, embrace the path to recovery, and embark on your 
-       journey to brighter, balanced living.
+       Welcome to OptiiMinds, your sanctuary for mental serenity. Designed to 
+       provide a therapeutic escape from depression, our platform offers a range 
+       of productive distractions to engage your mind positively. Our activities, 
+       rooted in mindfulness and creativity, help shift focus from distress to 
+       progress. Embrace the journey of healing in a caring community that understands 
+       your struggle and supports your recovery. With OptiiMinds, discover renewed 
+       mental wellness and take the first step towards a brighter, more balanced life.
       </motion.p>
 
       
