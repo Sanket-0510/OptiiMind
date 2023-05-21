@@ -1,20 +1,41 @@
-# Build and Deploy a Fantastic 3D Portfolio Website with Three.js and React.js
-![3D Portfolio](https://i.ibb.co/9ykhLtM/Thumbnail.png)
 
-## Introduction
-The most impressive websites in the world use 3D graphics and animations to bring their content to life. Learn how to build your own ThreeJS 3D Developer Portfolio today! 
- 
-In this course, you'll learn the following:
-- ThreeJS - a powerful 3D graphics library for rendering and animating the 3D model
-- React Three Fiber - a popular library for creating 3D graphics with ThreeJS in React
-- TailwindCSS - a popular utility-first CSS styling framework
-- Framer Motion - the most popular library used to bring your React website to life with animations
-You'll also learn how to:
-- Load, create and customize stunning 3D models and geometries with various lights, as well as understand the 3D world with a camera and positioning of an object in space.
-- Make your code reusable and scalable using Higher Order Components (HOCs) and other industry-standard best practices
-- Implement sending emails through a form on the website
-- Ensure responsiveness across all devices and improve your site's performance using Suspense and Preload.
+# Front-end of OptiiMind
 
-## Want to land your dream programming job in 3 - 6 months?
-⭐ JSM Masterclass Experience - https://jsmastery.pro/masterclass
-Become a Software Engineer. Guaranteed.
+This is the front-end of OptiiMind which intends to help people have a control over there mental health. We've three main products to let our users play with.
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/claddyk/OptiiMind
+```
+
+Go to the project directory
+
+```bash
+  cd OptiiMind
+```
+
+Install dependencies
+
+```bash
+  npm install --legacy-peer-deps
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+Use nodejs 18
+
+## Features
+
+![App Screenshot](https://github-production-user-asset-6210df.s3.amazonaws.com/37688684/239677844-92193163-ae03-45bf-93c1-3299e05101e5.png)
+
+
+## Support
+
+For support, email madscientists1523@gmail.com or join our [Discord](https://discord.gg/mRT2vupw)
+
