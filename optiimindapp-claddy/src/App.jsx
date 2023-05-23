@@ -10,9 +10,9 @@ const App = () => {
     <BrowserRouter>
       
       <Routes>
-        <Route exact path="/chat" element={<TalktoDoc />} />
-        <Route exact path="/" element={<Home></Home>} />
-        <Route exact path ="/test" element={<TestRoute></TestRoute>}></Route>
+        <Route exact path="https://optiimind.vercel.app/chat" element={<TalktoDoc />} />
+        <Route exact path="https://optiimind.vercel.app/" element={<Home></Home>} />
+        <Route exact path ="https://optiimind.vercel.app/test" element={<TestRoute></TestRoute>}></Route>
 
       </Routes>
     </BrowserRouter>
