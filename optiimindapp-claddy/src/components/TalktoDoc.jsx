@@ -3,7 +3,7 @@ import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import '../styles1/TalktoDoc.css'
-const API_KEY = "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";
+
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
   "role": "system", "content": "consult me as a pychologist as I am seeking consultancy for my mood swings and other distractions"
