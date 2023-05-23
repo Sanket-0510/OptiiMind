@@ -6,6 +6,7 @@ import { auth } from './middlewares/auth.js';
 import { register, login } from './controllers/auth.js';
 import profile from './controllers/profile.js';
 import dotenv from 'dotenv-flow';
+import { chat, chatgptData } from './controllers/aimind.js';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -16,14 +17,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({
-  credentials: true,
-  origin: 'https://optiimind.vercel.app'
-}));
-//main branch file
+app.use(
+  cors({
+    credentials: true,
+    origin: ['https://optiimind.vercel.app', 'http://localhost:5173'],
+  })
+);
 
-
-
+// Handle preflight requests
+app.options('*', cors());
 
 mongoose.set('strictQuery', false);
 
@@ -47,14 +49,13 @@ app.get('/', async (req, res) => {
   res.send('Welcome to the home page');
 });
 
-
-
-app.post('/register',
-  register
-);
+app.post('/register', register);
 app.post('/login', login);
 app.get('/profile', auth, profile);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+app.post('/chat', chat);
+app.get('/chat', chatgptData);
