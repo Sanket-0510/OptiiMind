@@ -1,13 +1,17 @@
-import { useState } from 'react'
+
+
+import { useState } from 'react';
 
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
-import '../styles1/TalktoDoc.css'
+import '../styles1/TalktoDoc.css';
+
 
 // "Explain things like you would to a 10 year old learning how to code."
-const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
-  "role": "system", "content": "consult me as a pychologist as I am seeking consultancy for my mood swings and other distractions"
-}
+const systemMessage = {
+  "role": "system",
+  "content": "consult me as a pychologist as I am seeking consultancy for my mood swings and other distractions"
+};
 
 function App() {
   const [messages, setMessages] = useState([
@@ -27,7 +31,7 @@ function App() {
     };
 
     const newMessages = [...messages, newMessage];
-    
+
     setMessages(newMessages);
 
     // Initial system message to determine ChatGPT functionality
@@ -48,7 +52,7 @@ function App() {
       } else {
         role = "user";
       }
-      return { role: role, content: messageObject.message}
+      return { role: role, content: messageObject.message }
     });
 
 
@@ -63,46 +67,46 @@ function App() {
       ]
     }
 
-    await fetch("https://api.openai.com/v1/chat/completions", 
-    {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer " + "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",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(apiRequestBody)
-    }).then((data) => {
-      return data.json();
-    }).then((data) => {
-      console.log(data);
-      setMessages([...chatMessages, {
-        message: data.choices[0].message.content,
-        sender: "ChatGPT"
-      }]);
-      setIsTyping(false);
-    });
+    await fetch("https://api.openai.com/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + process.env.API_KEY,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(apiRequestBody)
+      }).then((data) => {
+        return data.json();
+      }).then((data) => {
+        console.log(data);
+        setMessages([...chatMessages, {
+          message: data.choices[0].message.content,
+          sender: "ChatGPT"
+        }]);
+        setIsTyping(false);
+      });
   }
 
   return (
     <div className="App">
       <div className="message-list-scrollable" >
         <MainContainer >
-          <ChatContainer >       
-            <MessageList 
+          <ChatContainer >
+            <MessageList
               scrollBehavior="smooth"
               typingIndicator={isTyping ? <TypingIndicator content="OPtiimind is typing" /> : null}
             >
               {messages.map((message, i) => {
-                
+
                 return <Message key={i} model={message} />
               })}
             </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />        
+            <MessageInput placeholder="Type message here" onSend={handleSend} />
           </ChatContainer>
         </MainContainer>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
