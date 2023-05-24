@@ -25,16 +25,41 @@ const MindSync = () => {
   };
 
   return (
-    <div className='mood-assessment'>
+    <div className="mood-assessment">
       <h2>Mood Assessment</h2>
       <label>
         How would you describe your current emotional state?
         <br />
         <input
-          type="text"
+          type="radio"
           name="emotionalState"
+          value="Happy"
           onChange={handleInputChange}
-        />
+        /> Happy
+        <input
+          type="radio"
+          name="emotionalState"
+          value="Sad"
+          onChange={handleInputChange}
+        /> Sad
+        <input
+          type="radio"
+          name="emotionalState"
+          value="Angry"
+          onChange={handleInputChange}
+        /> Angry
+        <input
+          type="radio"
+          name="emotionalState"
+          value="Anxious"
+          onChange={handleInputChange}
+        /> Anxious
+        <input
+          type="radio"
+          name="emotionalState"
+          value="Neutral"
+          onChange={handleInputChange}
+        /> Neutral
       </label>
 
       <label>

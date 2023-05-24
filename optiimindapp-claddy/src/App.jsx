@@ -14,7 +14,7 @@ const App = () => {
       <Routes>
         <Route exact path="/chat" element={<TalktoDoc />} />
         <Route exact path="/" element={<Home></Home>} />
-        <Route exact path ="/soulsync" element ={<MindSync></MindSync>}></Route>
+        <Route exact path ="/mindsync" element ={<MindSync></MindSync>}></Route>
         <Route exact path = "/zenflow" element ={<Zenflow></Zenflow>}></Route>
 
       </Routes>

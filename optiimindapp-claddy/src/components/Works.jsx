@@ -17,10 +17,10 @@ const ProjectCard = ({
    
      var pageLink;
       if(name == "MindSync"){
-        pageLink= "/chat"
+        pageLink= "/mindsync"
       }
       else if(name == "SoulSync"){
-        pageLink = "/soulsync"
+        pageLink = "/chat"
       }
       else{
         pageLink = "/zenflow"
