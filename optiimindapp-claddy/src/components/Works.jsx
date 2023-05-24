@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { Link } from "react-router-dom";
 
 const ProjectCard = ({
   index,
@@ -13,8 +14,20 @@ const ProjectCard = ({
   description,
   image,
 }) => {
+   
+     var pageLink;
+      if(name == "MindSync"){
+        pageLink= "/chat"
+      }
+      else if(name == "SoulSync"){
+        pageLink = "/soulsync"
+      }
+      else{
+        pageLink = "/zenflow"
+      }
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+      
       <Tilt
         options={{
           max: 45,
@@ -23,7 +36,9 @@ const ProjectCard = ({
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
-        <div className='relative w-full h-[230px]'>
+        
+        <Link to={pageLink}><div className='relative w-full h-[230px]'>
+          
           <img
             src={image}
             alt='project_image'
@@ -32,7 +47,8 @@ const ProjectCard = ({
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
           </div>
-        </div>
+        </div></Link>
+        
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
