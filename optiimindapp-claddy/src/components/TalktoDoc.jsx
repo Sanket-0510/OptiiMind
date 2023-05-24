@@ -6,8 +6,9 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import '../styles1/TalktoDoc.css';
 
-
 // "Explain things like you would to a 10 year old learning how to code."
+
+const API_KEY = import.meta.env.VITE_API_KEY
 const systemMessage = {
   "role": "system",
   "content": "consult me as a pychologist as I am seeking consultancy for my mood swings and other distractions"
@@ -71,7 +72,7 @@ function App() {
       {
         method: "POST",
         headers: {
-          "Authorization": "Bearer " + process.env.API_KEY,
+          "Authorization": "Bearer " + API_KEY,
           "Content-Type": "application/json"
         },
         body: JSON.stringify(apiRequestBody)
