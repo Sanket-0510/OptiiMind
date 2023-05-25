@@ -48,3 +48,37 @@
   .jokecard{
     width: 300px;
   }
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .joke-card p {
+    font-size: 30px;
+    color: #ffffff;
+    margin: 0;
+    width: 400px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-radius: 30px;
+    border-color: white;
+  }
+  
+  .card-container2 h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .card-container2 img {
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+  }
+  
