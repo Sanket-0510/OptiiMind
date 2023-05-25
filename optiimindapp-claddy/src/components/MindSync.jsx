@@ -1,9 +1,77 @@
 import React, { useState } from 'react';
 import '../styles1/mindsync.css'
+import Quiz from './Quiz';
 const MindSync = () => {
-    const API_KEY = import.meta.env.VITE_API_KEY;
-    async function feedData(response) {
-         
+
+    var emotionalState, happinessLevel, stressLevel, energyLevel, positiveEvent;
+
+    const handleResponse = (response) => {
+
+        if (response.emotionalstate != null) emotionalState = response.emotionalstate
+        if (response.happinessLevel != null) happinessLevel = response.happinessLevel
+        if (response.stressLevel != null) stressLevel = response.stressLevel
+        if (response.energyLevel != null) energyLevel = response.energyLevel
+        if (response.positiveEvent != null) positiveEvent = response.positiveEvent
+
+
+
+        console.log(emotionalState, happinessLevel, stressLevel, energyLevel, positiveEvent)
+        console.log(response)
+
+
+    }
+
+
+    const quizobject = [
+        {
+            quesion: "How would you describe your current emotional state?",
+            stateName: 'emotionalstate',
+            options: [
+                "happy",
+                "sad",
+                "angry",
+                "anxios",
+                "neutral"
+            ]
+        },
+        {
+            quesion: "On a scale of 1 to 10, how would you rate your happiness level right now?",
+            stateName: 'happinessLevel',
+            options: [
+                "1-3(very low)",
+                "moderate",
+                "high"
+            ]
+        },
+        {
+            quesion: "Which of the following best describes your stress level at the moment?",
+            stateName: 'stressLevel',
+            options: [
+                "low",
+                "moderate",
+                "high",
+                "very high"
+            ]
+        }, {
+            quesion: "How would you describe your energy level today",
+            stateName: 'energyLevel',
+            options: [
+                "low",
+                "high",
+                "very high",
+                "moderate"
+            ]
+        }, {
+            quesion: "Have you experienced any recent positive events or achievements that have boosted your mood?",
+            stateName: 'positiveEvent',
+            options: [
+                "yes",
+                "no"
+            ]
+        }]
+      const API_KEY = import.meta.env.VITE_API_KEY;
+      async function feedData() {
+       
         
 
         let systemMessage = {
@@ -11,7 +79,7 @@ const MindSync = () => {
             "content": "act as a content suggestor where you should provide me content based the parameters which I am providing you to boost my mood"
         };
 
-        var prompt = {"role": "user", "content":`Following are my mood defining things: 1.emotional state :${response.emotionalState}based on this tell me a joke or a poem and also suggest some songs and fun videos on youtube`}
+        var prompt = {"role": "user", "content":`Following are my mood defining things: 1.emotional state :${emotionalState} 2.HapinessLevel :${happinessLevel} 3.StressLevel : ${stressLevel} 4.Energylevel: ${energyLevel} 5.positiveEvent: ${positiveEvent}based on this tell me a joke or a poem and also suggest some songs and fun videos on youtube also provide links for each and everything`}
         console.log(prompt);
         const apiRequestBody = {
             "model": "gpt-3.5-turbo",
@@ -20,7 +88,7 @@ const MindSync = () => {
                 prompt
             ]
         }
-        const data = await fetch("https://api.openai.com/v1/chat/completions", {
+        await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
             headers: {
                 "Authorization": "Bearer " + API_KEY,
@@ -28,11 +96,12 @@ const MindSync = () => {
             },
             body: JSON.stringify(apiRequestBody) // Change 'data' to 'body'
         }).then((data) => {
-            return data.json();
+            return data.json()
         }).then((data) => {
-            console.log(data);
+           
+            console.log(data.choices[0].message.content)
         });
-        console.log("the data is " + data.choices[0].message.content)
+       
     }
     const [response, setResponse] = useState({
         emotionalState: '',
@@ -58,80 +127,19 @@ const MindSync = () => {
     };
 
     return (
-        <div className="mood-assessment">
-            <h2>Mood Assessment</h2>
-            <label>
-                How would you describe your current emotional state?
-                <br />
-                <input
-                    type="radio"
-                    name="emotionalState"
-                    value="Happy"
-                    onChange={handleInputChange}
-                /> Happy
-                <input
-                    type="radio"
-                    name="emotionalState"
-                    value="Sad"
-                    onChange={handleInputChange}
-                /> Sad
-                <input
-                    type="radio"
-                    name="emotionalState"
-                    value="Angry"
-                    onChange={handleInputChange}
-                /> Angry
-                <input
-                    type="radio"
-                    name="emotionalState"
-                    value="Anxious"
-                    onChange={handleInputChange}
-                /> Anxious
-                <input
-                    type="radio"
-                    name="emotionalState"
-                    value="Neutral"
-                    onChange={handleInputChange}
-                /> Neutral
-            </label>
+        <div className="">
+            {quizobject.map((item) => {
+                console.log(item)
+            })}
+            {
+                quizobject.map((item, index) => (
 
-            <label>
-                On a scale of 1 to 10, how would you rate your happiness level right now?
-                <br />
-                <input
-                    type="number"
-                    name="happinessLevel"
-                    min="1"
-                    max="10"
-                    onChange={handleInputChange}
-                />
-            </label>
+                    <Quiz quizobject2={item} key={index} sendResponseToParent={handleResponse}></Quiz>
 
-            {/* More questions... */}
 
-            <label>
-                Are you currently experiencing any physical symptoms such as headaches, fatigue, or muscle tension?
-                <br />
-                <input
-                    type="checkbox"
-                    name="physicalSymptoms"
-                    onChange={handleInputChange}
-                />
-            </label>
-
-            <label>
-                Are you finding it difficult to concentrate or stay focused on tasks?
-                <br />
-                <input
-                    type="checkbox"
-                    name="concentrationDifficulties"
-                    onChange={handleInputChange}
-                />
-            </label>
-
-            {/* More questions... */}
-
-            <button onClick={() => feedData(response)}>Submit</button>
+                ))
+            }
+            <button type= "submit" onClick={feedData}>submit</button>
         </div>
     );
 };
