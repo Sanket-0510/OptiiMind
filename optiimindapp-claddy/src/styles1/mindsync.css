@@ -1,11 +1,12 @@
 
 .mood-assessment {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 20px;
     background-color: #000000;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(230, 226, 226, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
   }
   
   .mood-assessment h2 {
@@ -44,4 +45,6 @@
   .mood-assessment button:hover {
     background-color: #0056b3;
   }
-  
+  .jokecard{
+    width: 300px;
+  }

@@ -31,11 +31,12 @@ const Quiz = ({ quizobject2 ,sendResponseToParent}) => {
       <h3 style={{ color: "white" }}>{quizobject2.quesion}</h3>
       
       <div>
-        <ul>
+        <ul >
           {quizobject2.options.map((item, index) => (
            
-           <li key={index}>
-           <input type="radio" style={{ color: "white" }} value = {item} onChange={handleInputChange} name={quizobject2.stateName}/>
+           <li key={index} style={{display:"flex", flexDirection:"row"}}>
+           <input type="radio" style={{ color: "white", marginBottom:"6px", marginRight:"6px" }} value = {item} onChange={handleInputChange} name={quizobject2.stateName}/>
+            <br />
            <label htmlFor={`option-${index}`} style={{ color: "white" }}>{item}</label>
            </li>
           ))}
