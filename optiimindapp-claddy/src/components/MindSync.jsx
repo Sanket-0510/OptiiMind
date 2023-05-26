@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles1/mindsync.css'
 import Quiz from './Quiz';
+import Navbar from './Navbar';
 const MindSync = () => {
     const [imageurl, setimageurl] = useState('')
     const [message, setMessage] = useState('')
@@ -136,6 +137,7 @@ const MindSync = () => {
 
     return (
         <div className='card-container'>
+            <Navbar></Navbar>
             <div className="card-container2">
                 <div>
                     

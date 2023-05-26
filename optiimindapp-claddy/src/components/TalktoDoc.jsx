@@ -33,6 +33,7 @@ const TalktoDoc = () => {
   }
   return (
     <div className="main-container">
+      <Navbar></Navbar>
       <div className="chat-section">
         <div className={chatHeadingClass}>
           HI! WELCOME TO SOULSYNC
