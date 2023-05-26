@@ -135,14 +135,14 @@ const MindSync = () => {
 
 
     return (
-        <div style={{ display: "flex" }}>
+        <div className='card-container'>
             <div className="card-container2">
                 <div>
                     
                     <img src={imageurl} alt="" />
                 </div>
                 <div className="joke-card">
-                    <p>{joke}</p>
+                    {joke}
                 </div>
             </div>
 
@@ -168,15 +168,14 @@ const MindSync = () => {
                     window.scrollTo(0, 0)
                 }} >submit</button>
             </div>
-            <div style={{ borderRadius: "20px", boxShadow: "white" }}>
+            <div className='youtube-videos'>
                 {youtubeLinks.length > 0 && (
-                    <div>
+                    <div >
                         <h3>YouTube Videos:</h3>
                         {youtubeLinks.map((link, index) => (
                             <div key={index}>
                                 <iframe
-                                    width="560"
-                                    height="315"
+                                    
                                     src={link.replace('watch?v=', 'embed/')}
                                     title={`YouTube Video ${index + 1}`}
                                     frameBorder="0"

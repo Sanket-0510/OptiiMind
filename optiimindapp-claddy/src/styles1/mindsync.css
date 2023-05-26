@@ -1,84 +1,146 @@
+/* styles.css */
 
-.mood-assessment {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #000000;
-    border-radius: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* ...existing styles... */
+
+@media screen and (max-width: 600px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100vw;
 
   }
-  
-  .mood-assessment h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  .youtube-videos{
+    width:100vw
   }
-  
-  .mood-assessment label {
-    display: block;
-    margin-bottom: 10px;
+
+  .mood-assessment {
+    margin: 20px;
   }
-  
+
   .mood-assessment input[type="text"],
   .mood-assessment input[type="number"] {
-    width: 100%;
+    width: auto;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
   }
-  
-  .mood-assessment input[type="checkbox"] {
-    margin-right: 8px;
-  }
-  
+
   .mood-assessment button {
-    display: block;
+    width: 100%;
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
+  }
+
+  .joke-card {
+    font-size: 20px;
+     height: auto;
+    margin-left: 0;
+    margin-top: 20px;
     color: #000000;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    margin: 30px;
+
   }
-  
-  .mood-assessment button:hover {
-    background-color: #0056b3;
-  }
-  .jokecard{
-    width: 300px;
-  }
-  .card-container {
-    display: flex;
-    justify-content: space-between;
+
+  .card-container2 {
+    flex-direction: column;
     align-items: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100vw;
   }
-  
-  
-  .joke-card p {
-    font-size: 30px;
-    color: #ffffff;
-    margin: 0;
-    width: 400px;
-    margin-left: 50px;
-    margin-top: 30px;
-    border-radius: 30px;
-    border-color: white;
-  }
-  
-  .card-container2 h1 {
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-  }
-  
+
   .card-container2 img {
-    border-radius: 100%;
-    width: 400px;
-    height: 400px;
+    width: fit-content;
+    height: auto;
+    border-radius: 50%;
   }
-  
+
+  .card-container2 h1 {
+    font-size: 20px;
+  }
+}
+
+.mood-assessment {
+  max-width: 80vw;
+  margin: 5vw auto;
+  padding: 4vw;
+  background-color: #000000;
+  border-radius: 6vw;
+  box-shadow: 0 1vw 2.5vw rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.mood-assessment h2 {
+  font-size: 3.6vw;
+  margin-bottom: 4vw;
+}
+
+.mood-assessment label {
+  display: block;
+  margin-bottom: 2vw;
+}
+
+.mood-assessment input[type="text"],
+.mood-assessment input[type="number"] {
+  width: 100%;
+  padding: 1.6vw;
+  border: 0.1vw solid #ccc;
+  border-radius: 0.4vw;
+  box-sizing: border-box;
+}
+
+.mood-assessment input[type="checkbox"] {
+  margin-right: 0.8vw;
+}
+
+.mood-assessment button {
+  display: block;
+  margin-top: 2vw;
+  padding: 1vw 2vw;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.4vw;
+  cursor: pointer;
+}
+
+.mood-assessment button:hover {
+  background-color: #0056b3;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 4vw;
+  border-radius: 2vw;
+  box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.1);
+  margin-top: 5vw;
+}
+
+.joke-card p {
+  font-size: 4.8vw;
+  color: #0056b3;
+  margin: 0;
+  width: 100%;
+  margin-top: 4vw;
+  text-align: center;
+  border-radius: 6vw;
+  border-color: white;
+}
+
+.card-container2 h1 {
+  font-size: 3.6vw;
+  color: #333;
+  margin: 0;
+  margin-bottom: 4vw;
+  text-align: center;
+}
+
+.card-container2 img {
+  border-radius: 50%;
+  width: 33.33vw;
+  height: auto;
+  object-fit: cover;
+  margin-left: 1.6vw;
+}
