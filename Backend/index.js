@@ -66,7 +66,7 @@ app.post("/completions", async (req, res) => {
      console.log(req.body.message)
     let systemMessage = {
       "role": "user",
-      "content": "act as a content suggestor where you should provide me content based the parameters which I am providing you to boost my mood your name is OPtiiMind ok!"
+      "content": "act as a content suggestor where you should provide me content based the parameters which I am providing you to boost my mood your name is OPtiiMind ok! in only 50 words"
   };
 
      var prompt =  {"role": "user", "content": req.body.message}
