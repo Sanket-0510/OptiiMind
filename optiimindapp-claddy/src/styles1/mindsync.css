@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     width:100vw;
+    background-color: #000000;
 
   }
   .youtube-videos{
@@ -22,7 +23,7 @@
   .mood-assessment input[type="number"] {
     width: auto;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 4px;
     box-sizing: border-box;
   }
@@ -37,7 +38,7 @@
      height: auto;
     margin-left: 0;
     margin-top: 20px;
-    color: #000000;
+    color: #ffffff;
     margin: 30px;
 
   }
@@ -46,6 +47,8 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    transform: translateY(50px);
+    
   }
 
   .card-container2 img {
@@ -67,6 +70,7 @@
   border-radius: 6vw;
   box-shadow: 0 1vw 2.5vw rgba(0, 0, 0, 0.1);
   color: #ffffff;
+  transform: translateY(50px);
 }
 
 .mood-assessment h2 {
@@ -111,7 +115,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: #000000;
   padding: 4vw;
   border-radius: 2vw;
   box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.1);
@@ -120,7 +124,7 @@
 
 .joke-card  {
   font-size: 2vw;
-  color: #112336;
+  color: #ffffff;
   margin: 0;
   width: 100%;
   margin-top: 4vw;
