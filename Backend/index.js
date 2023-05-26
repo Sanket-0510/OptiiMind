@@ -7,10 +7,10 @@ import { register, login } from './controllers/auth.js';
 import profile from './controllers/profile.js';
 import dotenv from 'dotenv-flow';
 import { chat, chatgptData } from './controllers/aimind.js';
-
+import fetch from 'node-fetch';
 const app = express();
 const PORT = process.env.PORT || 8000;
-const API_KEY = process.env.API_KEY
+
 dotenv.config();
 
 app.use(express.urlencoded({ extended: false }));
@@ -61,28 +61,36 @@ app.post('/chat', chat);
 app.get('/chat', chatgptData);
 
 
-app.post("/completions", async(req,res)=>{
-      try{
-       const response = await fetch("https://api.openai.com/v1/chat/completions",{
-        method: "POST",
-        headers:{
-          "Authorization": "Bearer "+ API_KEY,
-          "Content-Type": "application/json"
-        },
-        body:JSON.stringify({
-          "model": "gpt-3.5-turbo",
-          "message": [{"role": "user", "content": req.body.prompt}]
-          
-        })
+app.post("/completions", async (req, res) => {
+  try {
+     console.log(req.body.message)
+    let systemMessage = {
+      "role": "user",
+      "content": "act as a content suggestor where you should provide me content based the parameters which I am providing you to boost my mood your name is OPtiiMind ok!"
+  };
 
-       })
-       const data = await response.json();
-       res.send(data)
-      }
+     var prompt =  {"role": "user", "content": req.body.message}
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + process.env.API_KEY,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "model": "gpt-3.5-turbo",
+        "messages": [
+          systemMessage,
+          prompt
+         
+        ]
+      })
+    });
 
-
-       catch(e){
-            console.log(e)
-       }
-
-})
+    const data  = await response.json()
+    console.log(data);
+    
+    res.send(data);
+  } catch (e) {
+    console.log(e);
+  }
+});
