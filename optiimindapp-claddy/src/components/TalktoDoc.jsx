@@ -1,113 +1,48 @@
+import React, { useState } from 'react';
+import Navbar from './Navbar';
+import "../styles1/TalktoDoc.css"
+const TalktoDoc = () => {
+  const [response, setresponse] = useState('')
+  const [user, setuser] = useState(true)
+  const BACKEND = import.meta.env.VIT_BACKEND
+  async function getResponse(){
 
-
-import { useState } from 'react';
-
-import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
-import '../styles1/TalktoDoc.css';
-
-// "Explain things like you would to a 10 year old learning how to code."
-
-const API_KEY = import.meta.env.VITE_API_KEY
-const systemMessage = {
-  "role": "system",
-  "content": "consult me as a pychologist as I am seeking consultancy for my mood swings and other distractions"
-};
-
-function App() {
-  const [messages, setMessages] = useState([
-    {
-      message: "Hello, I'm OptiiMind! Ask me anything!",
-      sentTime: "just now",
-      sender: "ChatGPT"
-    }
-  ]);
-  const [isTyping, setIsTyping] = useState(false);
-
-  const handleSend = async (message) => {
-    const newMessage = {
-      message,
-      direction: 'outgoing',
-      sender: "user"
-    };
-
-    const newMessages = [...messages, newMessage];
-
-    setMessages(newMessages);
-
-    // Initial system message to determine ChatGPT functionality
-    // How it responds, how it talks, etc.
-    setIsTyping(true);
-    await processMessageToChatGPT(newMessages);
-  };
-
-  async function processMessageToChatGPT(chatMessages) { // messages is an array of messages
-    // Format messages for chatGPT API
-    // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
-    // So we need to reformat
-
-    let apiMessages = chatMessages.map((messageObject) => {
-      let role = "";
-      if (messageObject.sender === "ChatGPT") {
-        role = "assistant";
-      } else {
-        role = "user";
+    const options ={
+      method : "POST",
+      body: JSON.stringify({
+        prompt:"hellow how are you"
+      }),
+      headers: {
+        "Content-Type": "application/json"
       }
-      return { role: role, content: messageObject.message }
-    });
-
-
-    // Get the request body set up with the model we plan to use
-    // and the messages which we formatted above. We add a system message in the front to'
-    // determine how we want chatGPT to act. 
-    const apiRequestBody = {
-      "model": "gpt-3.5-turbo",
-      "messages": [
-        systemMessage,  // The system message DEFINES the logic of our chatGPT
-        ...apiMessages // The messages from our chat with ChatGPT
-      ]
+    }
+    try{
+      const response = await fetch(BACKEND+ "/completion", options)
+      const data = await response.json();
+      console.log(data)
+    }
+    catch(e){
+      console.log(e)
     }
 
-    await fetch("https://api.openai.com/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          "Authorization": "Bearer " + API_KEY,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(apiRequestBody)
-      }).then((data) => {
-        return data.json();
-      }).then((data) => {
-        console.log(data);
-        setMessages([...chatMessages, {
-          message: data.choices[0].message.content,
-          sender: "ChatGPT"
-        }]);
-        setIsTyping(false);
-      });
   }
-
   return (
-    <div className="App">
-      <div className="message-list-scrollable" >
-        <MainContainer >
-          <ChatContainer >
-            <MessageList
-              scrollBehavior="smooth"
-              typingIndicator={isTyping ? <TypingIndicator content="OPtiimind is typing" /> : null}
-            >
-              {messages.map((message, i) => {
+    <div className='main-container'>
+     
+      <div className='chat-section'>
+        <div className='chat-heading'>
+          HI! WELCOME TO SOULSYNC
+          <br />
+          GET THINGS OFF YOUR MIND BY TEXTING OUR AI BOT
+        </div>
 
-                return <Message key={i} model={message} />
-              })}
-            </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />
-          </ChatContainer>
-        </MainContainer>
+        <div className='input-section'>
+          <input type='text' placeholder='...write your mind'  />
+          <button onClick={getResponse}> submit</button>
+        </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default TalktoDoc;
