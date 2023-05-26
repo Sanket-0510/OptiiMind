@@ -61,6 +61,9 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li style={{background:"white", borderRadius:"30px", color:"black", width:"80px", textAlign:"center", fontWeight:"600"}}> <Link to="/signin">SignIn</Link></li>
+          <li style={{background:"white", borderRadius:"30px", color:"black", width:"80px", textAlign:"center", fontWeight:"600"}}><Link to="/signup">SignUp</Link></li>
+          <li><img src="https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-profile-line-black-icon-png-image_691051.jpg" alt=""  style={{width:"30px", borderRadius:"50%"}}/></li>
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
