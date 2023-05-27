@@ -1,5 +1,5 @@
 import React from 'react'
-import { About, Contact, Feedbacks, Hero, Navbar, Works, StarsCanvas } from "../components";
+import { About, Contact, Feedbacks, Hero, Navbar, Activities, StarsCanvas } from "../components";
 const Home = () => {
   return (
     <div>
@@ -9,7 +9,7 @@ const Home = () => {
           <Hero />
         </div>
         <About />
-        <Works />
+        <Activities />
         <Feedbacks />
         <div className='relative z-0'>
           <Contact />
