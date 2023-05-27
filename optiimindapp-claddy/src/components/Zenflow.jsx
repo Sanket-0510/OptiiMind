@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles1/zenflow.css";
+import Navbar from "./Navbar";
 
 function Zenflow() {
   const [state, setState] = useState("inhale");
@@ -34,12 +35,15 @@ function Zenflow() {
   }, [state]);
 
   return (
+    <div className="box">
     <div className="container">
+      <Navbar></Navbar>
       <div className={`mostInner ${class2}`}>
         <button onClick={handleClick}>{state}</button>
       </div>
       
       
+    </div>
     </div>
   );
 }

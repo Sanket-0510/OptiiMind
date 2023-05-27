@@ -3,9 +3,17 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* Set the container height to 100% of viewport height */
+ 
+  
+}
+.box{
   background-image: url("../assets/panoramic-view-sunset-night.jpg");
   background-size:cover; /* Ensure the background image covers the container */
   overflow: hidden; /* Add overflow property to hide any content overflow */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .mostInner,
