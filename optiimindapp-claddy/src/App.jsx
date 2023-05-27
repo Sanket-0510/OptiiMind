@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { About, Contact, Feedbacks, Hero, Navbar, Works, StarsCanvas } from "./components";
+import { About, Contact, Feedbacks, Hero, Navbar, Activities, StarsCanvas } from "./components";
 import TalktoDoc from "./components/TalktoDoc";
 import Home from "./components/Home";
 
