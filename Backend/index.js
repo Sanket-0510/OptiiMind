@@ -9,7 +9,7 @@ import dotenv from 'dotenv-flow';
 import { chat, chatgptData } from './controllers/aimind.js';
 import fetch from 'node-fetch';
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8001;
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(
-  cors({
+  cors({ 
     credentials: true,
     origin: ['https://optiimind.vercel.app', 'http://localhost:5173'],
   })
@@ -30,7 +30,7 @@ app.options('*', cors());
 mongoose.set('strictQuery', false);
 
 mongoose
-  .connect(process.env.DATABASE_KEY, {
+  .connect("mongodb+srv://telisanket2002:C3L3y0RMYFL5uTq4@cluster0.zj7rqdf.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
