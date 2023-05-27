@@ -1,52 +1,45 @@
-import React, { useState, useEffect } from 'react';
-
-
-const totalTime = 10; // Total duration of the breathing exercise (in seconds)
-const inhaleTime = 7; // Inhale duration (in seconds)
-const exhaleTime = 8; // Exhale duration (in seconds)
-const holdTime = 4; // Hold duration (in seconds)
+import React, { useState, useEffect } from "react";
+import "../styles1/zenflow.css";
 
 function Zenflow() {
-  const [timer, setTimer] = useState(totalTime);
-  const [phase, setPhase] = useState('inhale');
+  const [state, setState] = useState("inhale");
+  const [class2, setClass2] = useState("mostInner");
 
   useEffect(() => {
-    const countdown = setInterval(() => {
-      setTimer((prevTimer) => prevTimer - 1);
-    }, 1000);
-
-    return () => clearInterval(countdown);
-  }, []);
-
-  useEffect(() => {
-    if (timer <= 0) {
-      switch (phase) {
-        case 'inhale':
-          setTimer(holdTime);
-          setPhase('hold');
-          break;
-        case 'hold':
-          setTimer(exhaleTime);
-          setPhase('exhale');
-          break;
-        case 'exhale':
-          setTimer(inhaleTime);
-          setPhase('inhale');
-          break;
-        default:
-          break;
+    const timer = setTimeout(() => {
+      if (state === "inhale") {
+        setState("exhale");
+      } else {
+        setState("inhale");
       }
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, [state]);
+
+  const handleClick = () => {
+    if (state === "inhale") {
+      setState("exhale");
+    } else {
+      setState("inhale");
     }
-  }, [timer, phase]);
+  };
+
+  useEffect(() => {
+    if (state === "exhale") {
+      setClass2("shrink");
+    } else {
+      setClass2("expand");
+    }
+  }, [state]);
 
   return (
-    <div className="zenflow">
-      <div className="container">
-        <h1>Breathe</h1>
-        <div className={`circle ${phase}`}></div>
-        <div className="timer">{timer}</div>
-        <div className="phase">{phase}</div>
+    <div className="container">
+      <div className={`mostInner ${class2}`}>
+        <button onClick={handleClick}>{state}</button>
       </div>
+      
+      
     </div>
   );
 }
