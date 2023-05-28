@@ -8,7 +8,7 @@ into a productivity with OptiiMind's magiical alchemy!
 
 - Mindsync- Unburden your thoughts and declutter your mind with MindSpace.
 - SoulSync- Get mental health assessments based on your interactions for professional guidance
-- Zenflow- Cultivate mindfulness & alleviate stress with Zen activities like meditation & breathing.
+- Zenflow- Cultivate mindfulness and alleviate stress with Zen activities like meditation and breathing.
 
 ## Demo
 
